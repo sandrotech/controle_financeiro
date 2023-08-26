@@ -1,1 +1,544 @@
-<h1>Oi</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Sistema Geral Hospital Prontocardio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/prontoticket.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/prontocheck.css' %}" rel="stylesheet">
+  <link href="{% static 'css/prontogestao.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/nps.css' %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'lightbox2/css/lightbox.min.css' %}">
+  <script src="{% static 'lightbox2/js/lightbox.min.js' %}"></script>
+ 
+
+</head>
+
+<body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+  </div>
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="" class="logo d-flex align-items-center">
+        <img src="{% static 'img/logo.png' %}" alt="">
+        <span class="d-none d-lg-block">Hospital Prontocardio </span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <!--     <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div> -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <!-- <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li> --><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <!-- <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a> -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <!-- <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a> -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="{% static 'img/messages-2.jpg' %}" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="{% static 'img/logo.png' %}" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{nm_colaborador}}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="">
+                <i class="bi bi-key"></i>
+                <span>Resetar Senha</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sair</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+      {% for setor in bloq_tela %}
+      {% if setor == 1 %}
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'telaInicial' %}">
+          <i class="bi bi-grid"></i>
+          <span>ScoreBoard Prontocardio</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      {% endif %}
+      {% if setor == 14 or setor == 1 %}
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-toggle="collapse" href="#components-nav">
+            <i class="bx bxs-comment-check" style="font-size: 18px;" ></i><span style="width: 189px;">Qualidade</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+            <li class="nav-item">
+              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#proctor-submenu" style="font-size: 15px;">
+                <i class="bi bi-journal-text" style="font-size: 15px;"></i><span>Proctor</span><i class=""></i>
+              </a>
+              <ul id="proctor-submenu" class="nav-content collapse" data-bs-parent="#components-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'preRelatoriov2' %}">
+                    <i class="bi bi-circle"></i><span>Relatório</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'indicadorBI' %}">
+                    <i class="bi bi-circle"></i><span>Indicadores</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'escolheSetor' %}">
+                    <i class="bi bi-circle"></i><span>Iniciar Avaliação</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'escSetor' %}">
+                    <i class="bi bi-circle"></i><span>Cadastros</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'dashboardProctorFiltroPorSetor' %}">
+                    <i class="bi bi-circle"></i><span>Dashboard</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link collapsed" data-bs-toggle="collapse" href="#notificar-submenu" style="font-size: 15px;">
+                <i class="bi bi-chat-left-text" style="font-size: 15px;"></i><span>Notificar</span><i class=""></i>
+              </a>
+              <ul id="notificar-submenu" class="nav-content collapse" data-bs-parent="#components-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'relatorioNotificar' %}">
+                    <i class="bi bi-circle"></i><span>Notificação de Incidente</span>
+                  </a>
+                  <a class="nav-link" href="{% url 'cadastroPt1' %}">
+                    <i class="bi bi-circle"></i><span>Cadastro de Itens</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#assistencial-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-clipboard-check"></i><span>Assistencial</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="assistencial-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'planoAcao' %}">
+              <i class="bi bi-circle"></i><span>Plano de Ação</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      {% if setor == 18 %} 
+      <li class="nav-item"> <!-- ProntoUser -->
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>ProntoTicket Usuário</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'abrir_chamado_usuario' %}">
+              <i class="bi bi-circle"></i><span>Abrir Chamado</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'listar_chamado_usuario' %}">
+              <i class="bi bi-circle"></i><span>Listar Chamados</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="{% url 'pesquisar_chamado_usuario' %}">
+              <i class="bi bi-circle"></i><span>Pesquisar Chamado</span>
+            </a>
+          </li> -->
+        </ul>
+        <li class="nav-item"> <!-- ProntoTec -->
+          <a class="nav-link collapsed" data-bs-target="#pronto-tec" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>ProntoTicket Técnico</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="pronto-tec" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="{% url 'abrir_chamado' %}">
+                <i class="bi bi-circle"></i><span>Abrir Chamado</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'agendar_chamado' %}">
+                <i class="bi bi-circle"></i><span>Agendar Chamado</span>
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'listar_chamado' %}">
+                <i class="bi bi-circle"></i><span>Listar Chamados</span>
+              </a>
+            </li>
+            <!-- <li>
+              <a href="{% url 'pesquisar_chamado' %}">
+                <i class="bi bi-circle"></i><span>Pesquisar Chamado</span>
+              </a>
+            </li> -->
+
+
+            <!-- <li>
+              <a href="{% url 'redireciona_checklist' %}">
+                <i class="bi bi-circle"></i><span>Checklist</span>
+              </a>
+            </li> -->
+            
+            <!-- <li>
+              <a href="{% url 'dash' %}">
+                <i class="bi bi-circle"></i><span>Dashboard Chamados</span>
+              </a>
+            </li> -->
+          </ul>
+        </li>
+      </li><!-- End Forms Nav -->
+      {% endif %}
+      {% if setor == 10 %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-hospital"></i><span>ProntoSaúde</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'consulta_paciente' %}">
+              <i class="bi bi-circle"></i><span>Consultar dados paciente</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'listar_chamado' %}">
+              <i class="bi bi-circle"></i><span>Financeiro</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>Histórico</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+      {% endif %}
+      {% if setor == 1 %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#gestao-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-building-fill-check"></i><span>Avaliação Desempenho</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="gestao-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'pesquisaCol' %}">
+              <i class="bi bi-circle"></i><span>Ficha de identidade</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+
+      {% if setor == 22 or setor == 1%}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#gestao-nav-aval" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-building-fill-check"></i><span>Auto Avaliação</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="gestao-nav-aval" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'fichaColabAuto' %}">
+              <i class="bi bi-circle"></i><span>Auto-Avaliação</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'lancMetaProdut' %}">
+              <i class="bi bi-circle"></i><span>Lançamento de Metas</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'resultadoLanc' %}">
+              <i class="bi bi-circle"></i><span>Resultados</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+
+      {% if setor == 17 or setor == 1%}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#nps-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-clipboard-check"></i><span>Marketing</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="nps-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'prontoPlayer' %}">
+              <i class="bi bi-circle"></i><span>ProntoPlayer</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'formularios' %}">
+              <i class="bi bi-circle"></i><span>Formulários</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'dashboardnps' %}">
+              <i class="bi bi-circle"></i><span>Dashboard</span>
+            </a>
+          </li>
+          <!-- <li>
+            
+            </li> -->
+        </ul>
+      </li><!-- End Tables Nav -->
+      {% endif %}
+      {% if setor == 1%}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#ti-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-laptop"></i><span>TI</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="ti-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="#">
+              <i class="bi bi-circle"></i><span>Usuários MV</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+      {% endif %}
+      {% endfor %}
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  {% block content %}
+  {% endblock %}
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Setor desenvolvimento TI Hospitalprontocardio</span></strong>. All Rights Reserved
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/listarChamados.js' %}"></script>
+  <script src="{% static 'js/localSelect.js' %}"></script>
+  <script src="{% static 'js/smartSelect.js' %}"></script>
+  <script src="{% static 'js/dataLimite.js' %}"></script>
+  <script src="{% static 'js/desabilitaBtn.js' %}"></script>
+  <script src="{% static 'vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/chart.js/chart.umd.js' %}"></script>
+  <script src="{% static 'vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script>
+    function printPage() {
+      window.print();
+    }
+  </script>
+</body>
+
+</html>
