@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'controle_financeiro',
-    'controle_visual'
+    'controle_visual',
 ]
 
 MIDDLEWARE = [
